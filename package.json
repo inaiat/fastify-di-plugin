@@ -1,0 +1,108 @@
+{
+  "name": "@inaiat/fastify-di-plugin",
+  "version": "0.0.1",
+  "description": "Simple, unobtrusive depency injection for fastify.",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "rimraf ./dist && mkdir dist && tsc --outDir dist && git rev-parse HEAD > BUILD_SHA",
+    "lint": "xo --fix",
+    "prepublishOnly": "npm run build",
+    "test": "xo && ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inaiat/fastify-di-plugin.git"
+  },
+  "keywords": [
+    "fastify",
+    "awilix",
+    "dependency-injection",
+    "dependency",
+    "plugin",
+    "di",   
+    "injection",
+    "inversion",
+    "control"
+  ],
+  "contributors": [
+    "Inaiat <inaiat@gmail.com>"
+  ],
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/inaiat/fastify-di-plugin/issues"
+  },
+  "homepage": "https://github.com/inaiat/fastify-di-plugin",
+  "engines": {
+    "node": ">= 16"
+  },
+  "dependencies": {
+    "fastify-plugin": "^4.2.0"
+  },
+  "peerDependencies": {
+    "awilix": "^7.0.3",
+    "fastify": "^4.4.0"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.231",
+    "@swc/helpers": "^0.4.6",
+    "@types/node": "^18.7.3",
+    "@types/semver": "^7.3.12",
+    "ava": "^4.3.1",
+    "awilix": "^7.0.3",
+    "c8": "^7.12.0",
+    "fastify": "^4.4.0",
+    "mongodb-memory-server": "^8.8.0",
+    "rimraf": "^3.0.2",
+    "semver": "^7.3.7",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4",
+    "xo": "^0.51.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "ava": {
+    "extensions": {
+      "ts": "module"
+    },
+    "nodeArguments": [
+      "--loader=ts-node/esm"
+    ]
+  },
+  "xo": {
+    "semicolon": false,
+    "ignores": [
+      "documentation/examples/*"
+    ],
+    "rules": {
+      "@typescript-eslint/no-empty-function": "off",
+      "n/no-deprecated-api": "off",
+      "n/prefer-global/url": "off",
+      "n/prefer-global/url-search-params": "off",
+      "@typescript-eslint/no-implicit-any-catch": "off",
+      "unicorn/prefer-node-protocol": "off",
+      "ava/assertion-arguments": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/await-thenable": "off",
+      "@typescript-eslint/no-redundant-type-constituents": "off",
+      "no-lone-blocks": "off",
+      "unicorn/no-await-expression-member": "off"
+    }
+  },
+  "author": "inaiat@gmail.com"
+}
