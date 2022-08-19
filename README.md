@@ -27,7 +27,7 @@ declare module '@inaiat/fastify-di-plugin' {
 const dateService = () => new Date();
 const printService = ({dateService: Date}) => dateService().toDateString()
 
-fastify.register(fastifyAwilixPlugin.default, {
+fastify.register(fastifyDiPlugin, {
       module: {
         dateService: asFunction(dateService).singleton(),
         printDate: asFunction(printService).singleton()
