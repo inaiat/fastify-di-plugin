@@ -1,6 +1,6 @@
 {
   "name": "@inaiat/fastify-di-plugin",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple, unobtrusive depency injection for fastify.",
   "type": "module",
   "exports": {
